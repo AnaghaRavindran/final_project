@@ -1,0 +1,103 @@
+body{
+    background-color: #412728;
+    color: rgb(255, 255, 255);
+}
+
+#topnav{
+    background-color: #412728;
+    overflow: hidden;
+}
+
+#topnav a{
+    float: left;
+    color: #F9F871;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+#topnav a:hover {
+    background-color: #7F4D3E;
+    color: #E2B659;
+}
+
+#topnav a#si {
+    float: right;
+    background-color: #412728;
+    color: white;
+    
+}
+
+#topnav a#si:hover{
+    background-color: #F9F871;
+    color: #000000;
+}
+
+#fooo{
+    text-align: center;
+    width: fit-content;
+    height: fit-content;
+    padding: 30px;
+    border: 0.40rem solid #E2B659;
+    
+    color: #F9F871;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    
+}
+
+#fooo input{
+    width: 300px;
+    background-color: #E2B659;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#fooo input:focus{
+    background-color: #B87C4C;
+    border: 3px solid #F9F871;
+    outline: 0;
+    box-shadow: none;
+}
+
+#fooo h2{
+    color: #F9F871;
+}
+
+#btn{
+    padding: 0.6rem 1.2rem;
+    background-color: #E2B659;
+    border: 2px solid #F9F871;
+    color: #412728;
+    font-size: medium;
+}
+
+#btn:hover{
+    color: #F9F871;
+    background-color: #412728;
+    border-color: #7F4D3E;
+    transition: .3s;
+}
+
+
+#modd{
+    padding: 30px;
+}
+
+#tab{
+    display: inline-block;
+    
+}
+
+.tg  {border-collapse:collapse;border-spacing:0;margin: 20px;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-7hap{font-size:20px;font-weight:bold;text-align:left;vertical-align:top}
+.tg .tg-nx8p{font-size:18px;text-align:left;vertical-align:top}
+.tg .tg-ir4y{font-size:12px;font-weight:bold;text-align:center;vertical-align:top}

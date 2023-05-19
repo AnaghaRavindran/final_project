@@ -1,0 +1,94 @@
+{% extends 'index.html' %}
+
+    {% block content %}
+
+            
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                    <strong> Message: </strong> {{ message }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            {% endfor %}
+        <header id="topnav">    
+            {% if user.is_authenticated %}
+
+                <a href="{% url 'home' %}">PHONEBOOK</a>
+                <a href="{% url 'signout' %}" id="si">SIGNOUT</a>
+                
+                
+                
+            {% else %}
+                <a href="{% url 'home' %}">PHONEBOOK</a>
+                <a href="{% url 'signup' %}" id="si">SIGNUP</a>
+                <a href="{% url 'signin' %}" id="si">SIGNIN</a>
+                
+            {% endif %}
+        </header> 
+        <hr>
+        
+        {% if user.is_authenticated %}
+        
+            {% load crispy_forms_tags %}  
+
+
+            <div class="container">
+                <!--Django Model Form-->
+                <div id="fooo">
+                    <h2>ADD A NEW CONTACT</h2>
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                            {{contact_form|crispy}}
+                            <button type="submit" id="btn">Submit</button>
+                    </form>
+                </div>    
+                <!--Django Model-->
+                <div id="modd">
+                    <h1>Contacts</h1>
+                    <div>
+                        {% if user.is_authenticated %}
+                            {% for c in contacts %}
+
+                                {% if user.id == c.author.id %}
+                                    <div id="tab">
+                                        <table class="tg">
+                                            <thead>
+                                              <tr>
+                                                <th class="tg-7hap">NAME: </th>
+                                                <th class="tg-nx8p">{{c.name}}</th>
+                                              </tr>
+                                            </thead>
+                                            <tbody>
+                                              <tr>
+                                                {% if c.email %}
+                                                    <td class="tg-7hap">EMAIL: </td>
+                                                    <td class="tg-nx8p">{{c.email}}</td>
+                                                {% endif %}    
+                                              </tr>
+                                              <tr>
+                                                {% if c.number %}
+                                                    <td class="tg-7hap">PHONE: </td>
+                                                    <td class="tg-nx8p">{{c.number}}</td>
+                                                {% endif %}    
+                                              </tr>
+                                              <tr>
+                                                <td class="tg-ir4y" colspan="2"><span style="font-style:italic">{{c.date_added}}</span></td>
+                                              </tr>
+                                            </tbody>
+                                        </table>
+                                            <br>
+                                    </div>        
+                                {% endif %}  
+                            {% empty %}
+                                <p>No contacts added.</p>
+                            {% endfor %}      
+                        {% endif %}
+                    </div>    
+                </div>    
+            </div>
+        {% else %}
+            <h1> LOGIN TO GET PHONEBOOK </h1>    
+        {% endif %}
+            
+    {% endblock content %}

@@ -1,0 +1,6 @@
+pip install django
+pip install mailutils
+pip install tzdata
+pip install django-crispy-forms
+
+Add your django secret key in settings.py
